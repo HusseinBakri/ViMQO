@@ -7,3 +7,4 @@ This is a schema that could be used in web applications that supplement Dublin C
 
 ## Descriptive Metadata Profile
 
+Visit [QoS4-3D Web terms](https://husseinbakri.github.io/QoS4-3DWeb/)
