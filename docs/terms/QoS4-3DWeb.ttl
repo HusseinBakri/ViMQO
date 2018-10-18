@@ -1,7 +1,1730 @@
+@prefix : <https://husseinbakri.github.io/QoS4-3DWeb/>
+
+
 @prefix dbpedia: <http://dbpedia.org/resource/> .
-@prefix dc: <http://purl.org/dc/terms/> .
-@prefix QoS4-3DWeb: <https://husseinbakri.github.io/QoS4-3DWeb/>
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcam: <http://purl.org/dc/dcam/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dbpedia: <http://dbpedia.org/resource/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix schema: <http://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vidont: <http://vidont.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix edm: <http://www.europeana.eu/schemas/edm/> .
+@prefix voaf: <http://purl.org/vocommons/voaf#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix radion: <http://www.w3.org/ns/radion#> .
+@prefix ore: <http://www.openarchives.org/ore/terms/> .
+@prefix wgs84_pos: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix frbr_core: <http://purl.org/vocab/frbr/core#> .
+@prefix frbroo: <http://iflastandards.info/ns/fr/frbr/frbroo/> .
+@prefix abc: <http://metadata.net/harmony/abc#> .
+@prefix DOLCE-Lite: <http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#> .
+
+
+@prefix : <http://www.europeana.eu/schemas/edm/> .
+
+<https://husseinbakri.github.io/QoS4-3DWeb/> a owl:Ontology ; foaf:maker dbpedia:Hussein_Bakri ;  dc:description "A QoS Ontology for the 3D Web"@en ; dc:title "The QoS4-3D Web Ontology"@en .
+
+
+##############
+####DCAM######
+##############
+
+<http://purl.org/dc/dcam/>
+    dcterms:modified "2012-06-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dcterms:publisher <http://purl.org/dc/aboutdcmi#DCMI> ;
+    dcterms:title "Metadata terms related to the DCMI Abstract Model"@en .
+
+dcam:VocabularyEncodingScheme
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#VocabularyEncodingScheme-001> ;
+    dcterms:issued "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdfs:Class ;
+    rdfs:comment "An enumerated set of resources."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/dcam/> ;
+    rdfs:label "Vocabulary Encoding Scheme"@en ;
+    rdfs:seeAlso <http://dublincore.org/documents/2007/06/04/abstract-model/> .
+
+dcam:memberOf
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#memberOf-002> ;
+    dcterms:issued "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dcterms:modified "2010-10-11"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdf:Property ;
+    rdfs:comment "A relationship between a resource and a vocabulary encoding scheme which indicates that the resource is a member of a set."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/dcam/> ;
+    rdfs:label "Member Of"@en ;
+    rdfs:range dcam:VocabularyEncodingScheme ;
+    rdfs:seeAlso <http://dublincore.org/documents/2007/06/04/abstract-model/> .
+
+<http://purl.org/dc/terms/>
+    dcterms:modified "2012-06-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dcterms:publisher <http://purl.org/dc/aboutdcmi#DCMI> ;
+    dcterms:title "DCMI Metadata Terms - other"@en .
+
+dcterms:Agent
+    dcterms:description "Examples of Agent include person, organization, and software agent."@en ;
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#Agent-001> ;
+    dcterms:issued "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a dcterms:AgentClass, rdfs:Class ;
+    rdfs:comment "A resource that acts or has the power to act."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "Agent"@en .
+
+dcterms:AgentClass
+    dcterms:description "Examples of Agent Class include groups seen as classes, such as students, women, charities, lecturers."@en ;
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#AgentClass-003> ;
+    dcterms:issued "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dcterms:modified "2012-06-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdfs:Class ;
+    rdfs:comment "A group of agents."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "Agent Class"@en ;
+    rdfs:subClassOf rdfs:Class .
+
+dcterms:BibliographicResource
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#BibliographicResource-001> ;
+    dcterms:issued "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdfs:Class ;
+    rdfs:comment "A book, article, or other documentary resource."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "Bibliographic Resource"@en .
+
+dcterms:Box
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#Box-003> ;
+    dcterms:issued "2000-07-11"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dcterms:modified "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdfs:Datatype ;
+    rdfs:comment "The set of regions in space defined by their geographic coordinates according to the DCMI Box Encoding Scheme."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "DCMI Box"@en ;
+    rdfs:seeAlso <http://dublincore.org/documents/dcmi-box/> .
+
+dcterms:DCMIType
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#DCMIType-005> ;
+    dcterms:issued "2000-07-11"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dcterms:modified "2012-06-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a dcam:VocabularyEncodingScheme ;
+    rdfs:comment "The set of classes specified by the DCMI Type Vocabulary, used to categorize the nature or genre of the resource."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "DCMI Type Vocabulary"@en ;
+    rdfs:seeAlso <http://purl.org/dc/dcmitype/> .
+
+dcterms:DDC
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#DDC-003> ;
+    dcterms:issued "2000-07-11"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dcterms:modified "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a dcam:VocabularyEncodingScheme ;
+    rdfs:comment "The set of conceptual resources specified by the Dewey Decimal Classification."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "DDC"@en ;
+    rdfs:seeAlso <http://www.oclc.org/dewey/> .
+
+dcterms:FileFormat
+    dcterms:description "Examples include the formats defined by the list of Internet Media Types."@en ;
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#FileFormat-001> ;
+    dcterms:issued "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdfs:Class ;
+    rdfs:comment "A digital resource format."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "File Format"@en ;
+    rdfs:subClassOf dcterms:MediaType .
+
+dcterms:Frequency
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#Frequency-001> ;
+    dcterms:issued "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdfs:Class ;
+    rdfs:comment "A rate at which something recurs."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "Frequency"@en .
+
+dcterms:IMT
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#IMT-004> ;
+    dcterms:issued "2000-07-11"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dcterms:modified "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a dcam:VocabularyEncodingScheme ;
+    rdfs:comment "The set of media types specified by the Internet Assigned Numbers Authority."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "IMT"@en ;
+    rdfs:seeAlso <http://www.iana.org/assignments/media-types/> .
+
+dcterms:ISO3166
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#ISO3166-004> ;
+    dcterms:issued "2000-07-11"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dcterms:modified "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdfs:Datatype ;
+    rdfs:comment "The set of codes listed in ISO 3166-1 for the representation of names of countries."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "ISO 3166"@en ;
+    rdfs:seeAlso <http://www.iso.org/iso/en/prods-services/iso3166ma/02iso-3166-code-lists/list-en1.html> .
+
+dcterms:ISO639-2
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#ISO639-2-003> ;
+    dcterms:issued "2000-07-11"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dcterms:modified "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdfs:Datatype ;
+    rdfs:comment "The three-letter alphabetic codes listed in ISO639-2 for the representation of names of languages."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "ISO 639-2"@en ;
+    rdfs:seeAlso <http://lcweb.loc.gov/standards/iso639-2/langhome.html> .
+
+dcterms:ISO639-3
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#ISO639-3-001> ;
+    dcterms:issued "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdfs:Datatype ;
+    rdfs:comment "The set of three-letter codes listed in ISO 639-3 for the representation of names of languages."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "ISO 639-3"@en ;
+    rdfs:seeAlso <http://www.sil.org/iso639-3/> .
+
+dcterms:Jurisdiction
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#Jurisdiction-001> ;
+    dcterms:issued "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdfs:Class ;
+    rdfs:comment "The extent or range of judicial, law enforcement, or other authority."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "Jurisdiction"@en ;
+    rdfs:subClassOf dcterms:LocationPeriodOrJurisdiction .
+
+dcterms:LCC
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#LCC-003> ;
+    dcterms:issued "2000-07-11"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dcterms:modified "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a dcam:VocabularyEncodingScheme ;
+    rdfs:comment "The set of conceptual resources specified by the Library of Congress Classification."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "LCC"@en ;
+    rdfs:seeAlso <http://lcweb.loc.gov/catdir/cpso/lcco/lcco.html> .
+
+dcterms:LCSH
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#LCSH-003> ;
+    dcterms:issued "2000-07-11"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dcterms:modified "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a dcam:VocabularyEncodingScheme ;
+    rdfs:comment "The set of labeled concepts specified by the Library of Congress Subject Headings."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "LCSH"@en .
+
+dcterms:LicenseDocument
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#LicenseDocument-001> ;
+    dcterms:issued "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdfs:Class ;
+    rdfs:comment "A legal document giving official permission to do something with a Resource."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "License Document"@en ;
+    rdfs:subClassOf dcterms:RightsStatement .
+
+dcterms:LinguisticSystem
+    dcterms:description "Examples include written, spoken, sign, and computer languages."@en ;
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#LinguisticSystem-001> ;
+    dcterms:issued "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdfs:Class ;
+    rdfs:comment "A system of signs, symbols, sounds, gestures, or rules used in communication."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "Linguistic System"@en .
+
+dcterms:Location
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#Location-001> ;
+    dcterms:issued "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdfs:Class ;
+    rdfs:comment "A spatial region or named place."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "Location"@en ;
+    rdfs:subClassOf dcterms:LocationPeriodOrJurisdiction .
+
+dcterms:LocationPeriodOrJurisdiction
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#LocationPeriodOrJurisdiction-001> ;
+    dcterms:issued "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdfs:Class ;
+    rdfs:comment "A location, period of time, or jurisdiction."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "Location, Period, or Jurisdiction"@en .
+
+dcterms:MESH
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#MESH-003> ;
+    dcterms:issued "2000-07-11"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dcterms:modified "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a dcam:VocabularyEncodingScheme ;
+    rdfs:comment "The set of labeled concepts specified by the Medical Subject Headings."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "MeSH"@en ;
+    rdfs:seeAlso <http://www.nlm.nih.gov/mesh/meshhome.html> .
+
+dcterms:MediaType
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#MediaType-001> ;
+    dcterms:issued "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdfs:Class ;
+    rdfs:comment "A file format or physical medium."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "Media Type"@en ;
+    rdfs:subClassOf dcterms:MediaTypeOrExtent .
+
+dcterms:MediaTypeOrExtent
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#MediaTypeOrExtent-001> ;
+    dcterms:issued "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdfs:Class ;
+    rdfs:comment "A media type or extent."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "Media Type or Extent"@en .
+
+dcterms:MethodOfAccrual
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#MethodOfAccrual-001> ;
+    dcterms:issued "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdfs:Class ;
+    rdfs:comment "A method by which resources are added to a collection."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "Method of Accrual"@en .
+
+dcterms:MethodOfInstruction
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#MethodOfInstruction-001> ;
+    dcterms:issued "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdfs:Class ;
+    rdfs:comment "A process that is used to engender knowledge, attitudes, and skills."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "Method of Instruction"@en .
+
+dcterms:NLM
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#NLM-002> ;
+    dcterms:issued "2005-06-13"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dcterms:modified "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a dcam:VocabularyEncodingScheme ;
+    rdfs:comment "The set of conceptual resources specified by the National Library of Medicine Classification."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "NLM"@en ;
+    rdfs:seeAlso <http://wwwcf.nlm.nih.gov/class/> .
+
+dcterms:Period
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#Period-003> ;
+    dcterms:issued "2000-07-11"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dcterms:modified "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdfs:Datatype ;
+    rdfs:comment "The set of time intervals defined by their limits according to the DCMI Period Encoding Scheme."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "DCMI Period"@en ;
+    rdfs:seeAlso <http://dublincore.org/documents/dcmi-period/> .
+
+dcterms:PeriodOfTime
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#PeriodOfTime-001> ;
+    dcterms:issued "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdfs:Class ;
+    rdfs:comment "An interval of time that is named or defined by its start and end dates."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "Period of Time"@en ;
+    rdfs:subClassOf dcterms:LocationPeriodOrJurisdiction .
+
+dcterms:PhysicalMedium
+    dcterms:description "Examples include paper, canvas, or DVD."@en ;
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#PhysicalMedium-001> ;
+    dcterms:issued "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdfs:Class ;
+    rdfs:comment "A physical material or carrier."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "Physical Medium"@en ;
+    rdfs:subClassOf dcterms:MediaType .
+
+dcterms:PhysicalResource
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#PhysicalResource-001> ;
+    dcterms:issued "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdfs:Class ;
+    rdfs:comment "A material thing."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "Physical Resource"@en .
+
+dcterms:Point
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#Point-003> ;
+    dcterms:issued "2000-07-11"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dcterms:modified "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdfs:Datatype ;
+    rdfs:comment "The set of points in space defined by their geographic coordinates according to the DCMI Point Encoding Scheme."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "DCMI Point"@en ;
+    rdfs:seeAlso <http://dublincore.org/documents/dcmi-point/> .
+
+dcterms:Policy
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#Policy-001> ;
+    dcterms:issued "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdfs:Class ;
+    rdfs:comment "A plan or course of action by an authority, intended to influence and determine decisions, actions, and other matters."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "Policy"@en .
+
+dcterms:ProvenanceStatement
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#ProvenanceStatement-001> ;
+    dcterms:issued "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdfs:Class ;
+    rdfs:comment "A statement of any changes in ownership and custody of a resource since its creation that are significant for its authenticity, integrity, and interpretation."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "Provenance Statement"@en .
+
+dcterms:RFC1766
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#RFC1766-003> ;
+    dcterms:issued "2000-07-11"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dcterms:modified "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdfs:Datatype ;
+    rdfs:comment "The set of tags, constructed according to RFC 1766, for the identification of languages."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "RFC 1766"@en ;
+    rdfs:seeAlso <http://www.ietf.org/rfc/rfc1766.txt> .
+
+dcterms:RFC3066
+    dcterms:description "RFC 3066 has been obsoleted by RFC 4646."@en ;
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#RFC3066-002> ;
+    dcterms:issued "2002-07-13"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dcterms:modified "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdfs:Datatype ;
+    rdfs:comment "The set of tags constructed according to RFC 3066 for the identification of languages."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "RFC 3066"@en ;
+    rdfs:seeAlso <http://www.ietf.org/rfc/rfc3066.txt> .
+
+dcterms:RFC4646
+    dcterms:description "RFC 4646 obsoletes RFC 3066."@en ;
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#RFC4646-001> ;
+    dcterms:issued "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdfs:Datatype ;
+    rdfs:comment "The set of tags constructed according to RFC 4646 for the identification of languages."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "RFC 4646"@en ;
+    rdfs:seeAlso <http://www.ietf.org/rfc/rfc4646.txt> .
+
+dcterms:RFC5646
+    dcterms:description "RFC 5646 obsoletes RFC 4646."@en ;
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#RFC5646-001> ;
+    dcterms:issued "2010-10-11"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdfs:Datatype ;
+    rdfs:comment "The set of tags constructed according to RFC 5646 for the identification of languages."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "RFC 5646"@en ;
+    rdfs:seeAlso <http://www.ietf.org/rfc/rfc5646.txt> .
+
+dcterms:RightsStatement
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#RightsStatement-001> ;
+    dcterms:issued "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdfs:Class ;
+    rdfs:comment "A statement about the intellectual property rights (IPR) held in or over a Resource, a legal document giving official permission to do something with a resource, or a statement about access rights."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "Rights Statement"@en .
+
+dcterms:SizeOrDuration
+    dcterms:description "Examples include a number of pages, a specification of length, width, and breadth, or a period in hours, minutes, and seconds."@en ;
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#SizeOrDuration-001> ;
+    dcterms:issued "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdfs:Class ;
+    rdfs:comment "A dimension or extent, or a time taken to play or execute."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "Size or Duration"@en ;
+    rdfs:subClassOf dcterms:MediaTypeOrExtent .
+
+dcterms:Standard
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#Standard-001> ;
+    dcterms:issued "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdfs:Class ;
+    rdfs:comment "A basis for comparison; a reference point against which other things can be evaluated."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "Standard"@en .
+
+dcterms:TGN
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#TGN-003> ;
+    dcterms:issued "2000-07-11"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dcterms:modified "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a dcam:VocabularyEncodingScheme ;
+    rdfs:comment "The set of places specified by the Getty Thesaurus of Geographic Names."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "TGN"@en ;
+    rdfs:seeAlso <http://www.getty.edu/research/tools/vocabulary/tgn/index.html> .
+
+dcterms:UDC
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#UDC-003> ;
+    dcterms:issued "2000-07-11"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dcterms:modified "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a dcam:VocabularyEncodingScheme ;
+    rdfs:comment "The set of conceptual resources specified by the Universal Decimal Classification."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "UDC"@en ;
+    rdfs:seeAlso <http://www.udcc.org/> .
+
+dcterms:URI
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#URI-003> ;
+    dcterms:issued "2000-07-11"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dcterms:modified "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdfs:Datatype ;
+    rdfs:comment "The set of identifiers constructed according to the generic syntax for Uniform Resource Identifiers as specified by the Internet Engineering Task Force."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "URI"@en ;
+    rdfs:seeAlso <http://www.ietf.org/rfc/rfc3986.txt> .
+
+dcterms:W3CDTF
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#W3CDTF-003> ;
+    dcterms:issued "2000-07-11"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dcterms:modified "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdfs:Datatype ;
+    rdfs:comment "The set of dates and times constructed according to the W3C Date and Time Formats Specification."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "W3C-DTF"@en ;
+    rdfs:seeAlso <http://www.w3.org/TR/NOTE-datetime> .
+
+dcterms:abstract
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#abstract-003> ;
+    dcterms:issued "2000-07-11"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dcterms:modified "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdf:Property ;
+    rdfs:comment "A summary of the resource."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "Abstract"@en ;
+    rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/description>, dcterms:description .
+
+dcterms:accessRights
+    dcterms:description "Access Rights may include information regarding access or restrictions based on privacy, security, or other policies."@en ;
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#accessRights-002> ;
+    dcterms:issued "2003-02-15"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dcterms:modified "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdf:Property ;
+    rdfs:comment "Information about who can access the resource or an indication of its security status."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "Access Rights"@en ;
+    rdfs:range dcterms:RightsStatement ;
+    rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/rights>, dcterms:rights .
+
+dcterms:accrualMethod
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#accrualMethod-003> ;
+    dcterms:issued "2005-06-13"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dcterms:modified "2010-10-11"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdf:Property ;
+    rdfs:comment "The method by which items are added to a collection."@en ;
+    rdfs:domain <http://purl.org/dc/dcmitype/Collection> ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "Accrual Method"@en ;
+    rdfs:range dcterms:MethodOfAccrual .
+
+dcterms:accrualPeriodicity
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#accrualPeriodicity-003> ;
+    dcterms:issued "2005-06-13"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dcterms:modified "2010-10-11"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdf:Property ;
+    rdfs:comment "The frequency with which items are added to a collection."@en ;
+    rdfs:domain <http://purl.org/dc/dcmitype/Collection> ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "Accrual Periodicity"@en ;
+    rdfs:range dcterms:Frequency .
+
+dcterms:accrualPolicy
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#accrualPolicy-003> ;
+    dcterms:issued "2005-06-13"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dcterms:modified "2010-10-11"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdf:Property ;
+    rdfs:comment "The policy governing the addition of items to a collection."@en ;
+    rdfs:domain <http://purl.org/dc/dcmitype/Collection> ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "Accrual Policy"@en ;
+    rdfs:range dcterms:Policy .
+
+dcterms:alternative
+    dcterms:description "The distinction between titles and alternative titles is application-specific."@en ;
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#alternative-003> ;
+    dcterms:issued "2000-07-11"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dcterms:modified "2010-10-11"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdf:Property ;
+    rdfs:comment "An alternative name for the resource."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "Alternative Title"@en ;
+    rdfs:range rdfs:Literal ;
+    rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/title>, dcterms:title .
+
+dcterms:audience
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#audience-003> ;
+    dcterms:issued "2001-05-21"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dcterms:modified "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdf:Property ;
+    rdfs:comment "A class of entity for whom the resource is intended or useful."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "Audience"@en ;
+    rdfs:range dcterms:AgentClass .
+
+dcterms:available
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#available-003> ;
+    dcterms:issued "2000-07-11"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dcterms:modified "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdf:Property ;
+    rdfs:comment "Date (often a range) that the resource became or will become available."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "Date Available"@en ;
+    rdfs:range rdfs:Literal ;
+    rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/date>, dcterms:date .
+
+dcterms:bibliographicCitation
+    dcterms:description "Recommended practice is to include sufficient bibliographic detail to identify the resource as unambiguously as possible."@en ;
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#bibliographicCitation-002> ;
+    dcterms:issued "2003-02-15"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dcterms:modified "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdf:Property ;
+    rdfs:comment "A bibliographic reference for the resource."@en ;
+    rdfs:domain dcterms:BibliographicResource ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "Bibliographic Citation"@en ;
+    rdfs:range rdfs:Literal ;
+    rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/identifier>, dcterms:identifier .
+
+dcterms:conformsTo
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#conformsTo-003> ;
+    dcterms:issued "2001-05-21"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dcterms:modified "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdf:Property ;
+    rdfs:comment "An established standard to which the described resource conforms."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "Conforms To"@en ;
+    rdfs:range dcterms:Standard ;
+    rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/relation>, dcterms:relation .
+
+dcterms:contributor
+    dcterms:description "Examples of a Contributor include a person, an organization, or a service."@en ;
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#contributorT-001> ;
+    dcterms:issued "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dcterms:modified "2010-10-11"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdf:Property ;
+    rdfs:comment "An entity responsible for making contributions to the resource."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "Contributor"@en ;
+    rdfs:range dcterms:Agent ;
+    rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/contributor> .
+
+dcterms:coverage
+    dcterms:description "Spatial topic and spatial applicability may be a named place or a location specified by its geographic coordinates. Temporal topic may be a named period, date, or date range. A jurisdiction may be a named administrative entity or a geographic place to which the resource applies. Recommended best practice is to use a controlled vocabulary such as the Thesaurus of Geographic Names [TGN]. Where appropriate, named places or time periods can be used in preference to numeric identifiers such as sets of coordinates or date ranges."@en ;
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#coverageT-001> ;
+    dcterms:issued "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dcterms:modified "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdf:Property ;
+    rdfs:comment "The spatial or temporal topic of the resource, the spatial applicability of the resource, or the jurisdiction under which the resource is relevant."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "Coverage"@en ;
+    rdfs:range dcterms:LocationPeriodOrJurisdiction ;
+    rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/coverage> .
+
+dcterms:created
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#created-003> ;
+    dcterms:issued "2000-07-11"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dcterms:modified "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdf:Property ;
+    rdfs:comment "Date of creation of the resource."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "Date Created"@en ;
+    rdfs:range rdfs:Literal ;
+    rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/date>, dcterms:date .
+
+dcterms:creator
+    dcterms:description "Examples of a Creator include a person, an organization, or a service."@en ;
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#creatorT-002> ;
+    dcterms:issued "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dcterms:modified "2010-10-11"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdf:Property ;
+    rdfs:comment "An entity primarily responsible for making the resource."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "Creator"@en ;
+    rdfs:range dcterms:Agent ;
+    rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/creator>, dcterms:contributor ;
+    owl:equivalentProperty <http://xmlns.com/foaf/0.1/maker> .
+
+dcterms:date
+    dcterms:description "Date may be used to express temporal information at any level of granularity.  Recommended best practice is to use an encoding scheme, such as the W3CDTF profile of ISO 8601 [W3CDTF]."@en ;
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#dateT-001> ;
+    dcterms:issued "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dcterms:modified "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdf:Property ;
+    rdfs:comment "A point or period of time associated with an event in the lifecycle of the resource."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "Date"@en ;
+    rdfs:range rdfs:Literal ;
+    rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/date> .
+
+dcterms:dateAccepted
+    dcterms:description "Examples of resources to which a Date Accepted may be relevant are a thesis (accepted by a university department) or an article (accepted by a journal)."@en ;
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#dateAccepted-002> ;
+    dcterms:issued "2002-07-13"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dcterms:modified "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdf:Property ;
+    rdfs:comment "Date of acceptance of the resource."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "Date Accepted"@en ;
+    rdfs:range rdfs:Literal ;
+    rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/date>, dcterms:date .
+
+dcterms:dateCopyrighted
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#dateCopyrighted-002> ;
+    dcterms:issued "2002-07-13"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dcterms:modified "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdf:Property ;
+    rdfs:comment "Date of copyright."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "Date Copyrighted"@en ;
+    rdfs:range rdfs:Literal ;
+    rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/date>, dcterms:date .
+
+dcterms:dateSubmitted
+    dcterms:description "Examples of resources to which a Date Submitted may be relevant are a thesis (submitted to a university department) or an article (submitted to a journal)."@en ;
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#dateSubmitted-002> ;
+    dcterms:issued "2002-07-13"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dcterms:modified "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdf:Property ;
+    rdfs:comment "Date of submission of the resource."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "Date Submitted"@en ;
+    rdfs:range rdfs:Literal ;
+    rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/date>, dcterms:date .
+
+dcterms:description
+    dcterms:description "Description may include but is not limited to: an abstract, a table of contents, a graphical representation, or a free-text account of the resource."@en ;
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#descriptionT-001> ;
+    dcterms:issued "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dcterms:modified "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdf:Property ;
+    rdfs:comment "An account of the resource."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "Description"@en ;
+    rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/description> .
+
+dcterms:educationLevel
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#educationLevel-002> ;
+    dcterms:issued "2002-07-13"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dcterms:modified "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdf:Property ;
+    rdfs:comment "A class of entity, defined in terms of progression through an educational or training context, for which the described resource is intended."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "Audience Education Level"@en ;
+    rdfs:range dcterms:AgentClass ;
+    rdfs:subPropertyOf dcterms:audience .
+
+dcterms:extent
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#extent-003> ;
+    dcterms:issued "2000-07-11"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dcterms:modified "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdf:Property ;
+    rdfs:comment "The size or duration of the resource."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "Extent"@en ;
+    rdfs:range dcterms:SizeOrDuration ;
+    rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/format>, dcterms:format .
+
+dcterms:format
+    dcterms:description "Examples of dimensions include size and duration. Recommended best practice is to use a controlled vocabulary such as the list of Internet Media Types [MIME]."@en ;
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#formatT-001> ;
+    dcterms:issued "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dcterms:modified "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdf:Property ;
+    rdfs:comment "The file format, physical medium, or dimensions of the resource."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "Format"@en ;
+    rdfs:range dcterms:MediaTypeOrExtent ;
+    rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/format> .
+
+dcterms:hasFormat
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#hasFormat-003> ;
+    dcterms:issued "2000-07-11"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dcterms:modified "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdf:Property ;
+    rdfs:comment "A related resource that is substantially the same as the pre-existing described resource, but in another format."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "Has Format"@en ;
+    rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/relation>, dcterms:relation ;
+    skos:note "This term is intended to be used with non-literal values as defined in the DCMI Abstract Model (http://dublincore.org/documents/abstract-model/).  As of December 2007, the DCMI Usage Board is seeking a way to express this intention with a formal range declaration."@en .
+
+dcterms:hasPart
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#hasPart-003> ;
+    dcterms:issued "2000-07-11"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dcterms:modified "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdf:Property ;
+    rdfs:comment "A related resource that is included either physically or logically in the described resource."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "Has Part"@en ;
+    rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/relation>, dcterms:relation ;
+    skos:note "This term is intended to be used with non-literal values as defined in the DCMI Abstract Model (http://dublincore.org/documents/abstract-model/).  As of December 2007, the DCMI Usage Board is seeking a way to express this intention with a formal range declaration."@en .
+
+dcterms:hasVersion
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#hasVersion-003> ;
+    dcterms:issued "2000-07-11"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dcterms:modified "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdf:Property ;
+    rdfs:comment "A related resource that is a version, edition, or adaptation of the described resource."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "Has Version"@en ;
+    rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/relation>, dcterms:relation ;
+    skos:note "This term is intended to be used with non-literal values as defined in the DCMI Abstract Model (http://dublincore.org/documents/abstract-model/).  As of December 2007, the DCMI Usage Board is seeking a way to express this intention with a formal range declaration."@en .
+
+dcterms:identifier
+    dcterms:description "Recommended best practice is to identify the resource by means of a string conforming to a formal identification system. "@en ;
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#identifierT-001> ;
+    dcterms:issued "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dcterms:modified "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdf:Property ;
+    rdfs:comment "An unambiguous reference to the resource within a given context."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "Identifier"@en ;
+    rdfs:range rdfs:Literal ;
+    rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/identifier> .
+
+dcterms:instructionalMethod
+    dcterms:description "Instructional Method will typically include ways of presenting instructional materials or conducting instructional activities, patterns of learner-to-learner and learner-to-instructor interactions, and mechanisms by which group and individual levels of learning are measured.  Instructional methods include all aspects of the instruction and learning processes from planning and implementation through evaluation and feedback."@en ;
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#instructionalMethod-002> ;
+    dcterms:issued "2005-06-13"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dcterms:modified "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdf:Property ;
+    rdfs:comment "A process, used to engender knowledge, attitudes and skills, that the described resource is designed to support."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "Instructional Method"@en ;
+    rdfs:range dcterms:MethodOfInstruction .
+
+dcterms:isFormatOf
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#isFormatOf-003> ;
+    dcterms:issued "2000-07-11"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dcterms:modified "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdf:Property ;
+    rdfs:comment "A related resource that is substantially the same as the described resource, but in another format."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "Is Format Of"@en ;
+    rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/relation>, dcterms:relation ;
+    skos:note "This term is intended to be used with non-literal values as defined in the DCMI Abstract Model (http://dublincore.org/documents/abstract-model/).  As of December 2007, the DCMI Usage Board is seeking a way to express this intention with a formal range declaration."@en .
+
+dcterms:isPartOf
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#isPartOf-003> ;
+    dcterms:issued "2000-07-11"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dcterms:modified "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdf:Property ;
+    rdfs:comment "A related resource in which the described resource is physically or logically included."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "Is Part Of"@en ;
+    rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/relation>, dcterms:relation ;
+    skos:note "This term is intended to be used with non-literal values as defined in the DCMI Abstract Model (http://dublincore.org/documents/abstract-model/).  As of December 2007, the DCMI Usage Board is seeking a way to express this intention with a formal range declaration."@en .
+
+dcterms:isReferencedBy
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#isReferencedBy-003> ;
+    dcterms:issued "2000-07-11"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dcterms:modified "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdf:Property ;
+    rdfs:comment "A related resource that references, cites, or otherwise points to the described resource."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "Is Referenced By"@en ;
+    rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/relation>, dcterms:relation ;
+    skos:note "This term is intended to be used with non-literal values as defined in the DCMI Abstract Model (http://dublincore.org/documents/abstract-model/).  As of December 2007, the DCMI Usage Board is seeking a way to express this intention with a formal range declaration."@en .
+
+dcterms:isReplacedBy
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#isReplacedBy-003> ;
+    dcterms:issued "2000-07-11"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dcterms:modified "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdf:Property ;
+    rdfs:comment "A related resource that supplants, displaces, or supersedes the described resource."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "Is Replaced By"@en ;
+    rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/relation>, dcterms:relation ;
+    skos:note "This term is intended to be used with non-literal values as defined in the DCMI Abstract Model (http://dublincore.org/documents/abstract-model/).  As of December 2007, the DCMI Usage Board is seeking a way to express this intention with a formal range declaration."@en .
+
+dcterms:isRequiredBy
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#isRequiredBy-003> ;
+    dcterms:issued "2000-07-11"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dcterms:modified "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdf:Property ;
+    rdfs:comment "A related resource that requires the described resource to support its function, delivery, or coherence."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "Is Required By"@en ;
+    rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/relation>, dcterms:relation ;
+    skos:note "This term is intended to be used with non-literal values as defined in the DCMI Abstract Model (http://dublincore.org/documents/abstract-model/).  As of December 2007, the DCMI Usage Board is seeking a way to express this intention with a formal range declaration."@en .
+
+dcterms:isVersionOf
+    dcterms:description "Changes in version imply substantive changes in content rather than differences in format."@en ;
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#isVersionOf-003> ;
+    dcterms:issued "2000-07-11"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dcterms:modified "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdf:Property ;
+    rdfs:comment "A related resource of which the described resource is a version, edition, or adaptation."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "Is Version Of"@en ;
+    rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/relation>, dcterms:relation ;
+    skos:note "This term is intended to be used with non-literal values as defined in the DCMI Abstract Model (http://dublincore.org/documents/abstract-model/).  As of December 2007, the DCMI Usage Board is seeking a way to express this intention with a formal range declaration."@en .
+
+dcterms:issued
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#issued-003> ;
+    dcterms:issued "2000-07-11"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dcterms:modified "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdf:Property ;
+    rdfs:comment "Date of formal issuance (e.g., publication) of the resource."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "Date Issued"@en ;
+    rdfs:range rdfs:Literal ;
+    rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/date>, dcterms:date .
+
+dcterms:language
+    dcterms:description "Recommended best practice is to use a controlled vocabulary such as RFC 4646 [RFC4646]."@en ;
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#languageT-001> ;
+    dcterms:issued "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dcterms:modified "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdf:Property ;
+    rdfs:comment "A language of the resource."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "Language"@en ;
+    rdfs:range dcterms:LinguisticSystem ;
+    rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/language> .
+
+dcterms:license
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#license-002> ;
+    dcterms:issued "2004-06-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dcterms:modified "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdf:Property ;
+    rdfs:comment "A legal document giving official permission to do something with the resource."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "License"@en ;
+    rdfs:range dcterms:LicenseDocument ;
+    rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/rights>, dcterms:rights .
+
+dcterms:mediator
+    dcterms:description "In an educational context, a mediator might be a parent, teacher, teaching assistant, or care-giver."@en ;
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#mediator-003> ;
+    dcterms:issued "2001-05-21"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dcterms:modified "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdf:Property ;
+    rdfs:comment "An entity that mediates access to the resource and for whom the resource is intended or useful."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "Mediator"@en ;
+    rdfs:range dcterms:AgentClass ;
+    rdfs:subPropertyOf dcterms:audience .
+
+dcterms:medium
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#medium-003> ;
+    dcterms:issued "2000-07-11"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dcterms:modified "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdf:Property ;
+    rdfs:comment "The material or physical carrier of the resource."@en ;
+    rdfs:domain dcterms:PhysicalResource ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "Medium"@en ;
+    rdfs:range dcterms:PhysicalMedium ;
+    rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/format>, dcterms:format .
+
+dcterms:modified
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#modified-003> ;
+    dcterms:issued "2000-07-11"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dcterms:modified "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdf:Property ;
+    rdfs:comment "Date on which the resource was changed."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "Date Modified"@en ;
+    rdfs:range rdfs:Literal ;
+    rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/date>, dcterms:date .
+
+dcterms:provenance
+    dcterms:description "The statement may include a description of any changes successive custodians made to the resource."@en ;
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#provenance-002> ;
+    dcterms:issued "2004-09-20"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dcterms:modified "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdf:Property ;
+    rdfs:comment "A statement of any changes in ownership and custody of the resource since its creation that are significant for its authenticity, integrity, and interpretation."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "Provenance"@en ;
+    rdfs:range dcterms:ProvenanceStatement .
+
+dcterms:publisher
+    dcterms:description "Examples of a Publisher include a person, an organization, or a service."@en ;
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#publisherT-001> ;
+    dcterms:issued "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dcterms:modified "2010-10-11"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdf:Property ;
+    rdfs:comment "An entity responsible for making the resource available."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "Publisher"@en ;
+    rdfs:range dcterms:Agent ;
+    rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/publisher> .
+
+dcterms:references
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#references-003> ;
+    dcterms:issued "2000-07-11"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dcterms:modified "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdf:Property ;
+    rdfs:comment "A related resource that is referenced, cited, or otherwise pointed to by the described resource."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "References"@en ;
+    rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/relation>, dcterms:relation ;
+    skos:note "This term is intended to be used with non-literal values as defined in the DCMI Abstract Model (http://dublincore.org/documents/abstract-model/).  As of December 2007, the DCMI Usage Board is seeking a way to express this intention with a formal range declaration."@en .
+
+dcterms:relation
+    dcterms:description "Recommended best practice is to identify the related resource by means of a string conforming to a formal identification system. "@en ;
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#relationT-001> ;
+    dcterms:issued "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dcterms:modified "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdf:Property ;
+    rdfs:comment "A related resource."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "Relation"@en ;
+    rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/relation> ;
+    skos:note "This term is intended to be used with non-literal values as defined in the DCMI Abstract Model (http://dublincore.org/documents/abstract-model/).  As of December 2007, the DCMI Usage Board is seeking a way to express this intention with a formal range declaration."@en .
+
+dcterms:replaces
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#replaces-003> ;
+    dcterms:issued "2000-07-11"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dcterms:modified "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdf:Property ;
+    rdfs:comment "A related resource that is supplanted, displaced, or superseded by the described resource."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "Replaces"@en ;
+    rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/relation>, dcterms:relation ;
+    skos:note "This term is intended to be used with non-literal values as defined in the DCMI Abstract Model (http://dublincore.org/documents/abstract-model/).  As of December 2007, the DCMI Usage Board is seeking a way to express this intention with a formal range declaration."@en .
+
+dcterms:requires
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#requires-003> ;
+    dcterms:issued "2000-07-11"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dcterms:modified "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdf:Property ;
+    rdfs:comment "A related resource that is required by the described resource to support its function, delivery, or coherence."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "Requires"@en ;
+    rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/relation>, dcterms:relation ;
+    skos:note "This term is intended to be used with non-literal values as defined in the DCMI Abstract Model (http://dublincore.org/documents/abstract-model/).  As of December 2007, the DCMI Usage Board is seeking a way to express this intention with a formal range declaration."@en .
+
+dcterms:rights
+    dcterms:description "Typically, rights information includes a statement about various property rights associated with the resource, including intellectual property rights."@en ;
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#rightsT-001> ;
+    dcterms:issued "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dcterms:modified "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdf:Property ;
+    rdfs:comment "Information about rights held in and over the resource."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "Rights"@en ;
+    rdfs:range dcterms:RightsStatement ;
+    rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/rights> .
+
+dcterms:rightsHolder
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#rightsHolder-002> ;
+    dcterms:issued "2004-06-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dcterms:modified "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdf:Property ;
+    rdfs:comment "A person or organization owning or managing rights over the resource."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "Rights Holder"@en ;
+    rdfs:range dcterms:Agent .
+
+dcterms:source
+    dcterms:description "The described resource may be derived from the related resource in whole or in part. Recommended best practice is to identify the related resource by means of a string conforming to a formal identification system."@en ;
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#sourceT-001> ;
+    dcterms:issued "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dcterms:modified "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdf:Property ;
+    rdfs:comment "A related resource from which the described resource is derived."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "Source"@en ;
+    rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/source>, dcterms:relation ;
+    skos:note "This term is intended to be used with non-literal values as defined in the DCMI Abstract Model (http://dublincore.org/documents/abstract-model/).  As of December 2007, the DCMI Usage Board is seeking a way to express this intention with a formal range declaration."@en .
+
+dcterms:spatial
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#spatial-003> ;
+    dcterms:issued "2000-07-11"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dcterms:modified "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdf:Property ;
+    rdfs:comment "Spatial characteristics of the resource."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "Spatial Coverage"@en ;
+    rdfs:range dcterms:Location ;
+    rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/coverage>, dcterms:coverage .
+
+dcterms:subject
+    dcterms:description "Typically, the subject will be represented using keywords, key phrases, or classification codes. Recommended best practice is to use a controlled vocabulary."@en ;
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#subjectT-002> ;
+    dcterms:issued "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dcterms:modified "2012-06-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdf:Property ;
+    rdfs:comment "The topic of the resource."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "Subject"@en ;
+    rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/subject> ;
+    skos:note "This term is intended to be used with non-literal values as defined in the DCMI Abstract Model (http://dublincore.org/documents/abstract-model/).  As of December 2007, the DCMI Usage Board is seeking a way to express this intention with a formal range declaration."@en .
+
+dcterms:tableOfContents
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#tableOfContents-003> ;
+    dcterms:issued "2000-07-11"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dcterms:modified "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdf:Property ;
+    rdfs:comment "A list of subunits of the resource."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "Table Of Contents"@en ;
+    rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/description>, dcterms:description .
+
+dcterms:temporal
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#temporal-003> ;
+    dcterms:issued "2000-07-11"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dcterms:modified "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdf:Property ;
+    rdfs:comment "Temporal characteristics of the resource."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "Temporal Coverage"@en ;
+    rdfs:range dcterms:PeriodOfTime ;
+    rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/coverage>, dcterms:coverage .
+
+dcterms:title
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#titleT-002> ;
+    dcterms:issued "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dcterms:modified "2010-10-11"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdf:Property ;
+    rdfs:comment "A name given to the resource."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "Title"@en ;
+    rdfs:range rdfs:Literal ;
+    rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/title> .
+
+dcterms:type
+    dcterms:description "Recommended best practice is to use a controlled vocabulary such as the DCMI Type Vocabulary [DCMITYPE]. To describe the file format, physical medium, or dimensions of the resource, use the Format element."@en ;
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#typeT-001> ;
+    dcterms:issued "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dcterms:modified "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdf:Property ;
+    rdfs:comment "The nature or genre of the resource."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "Type"@en ;
+    rdfs:range rdfs:Class ;
+    rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/type> .
+
+dcterms:valid
+    dcterms:hasVersion <http://dublincore.org/usage/terms/history/#valid-003> ;
+    dcterms:issued "2000-07-11"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dcterms:modified "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdf:Property ;
+    rdfs:comment "Date (often a range) of validity of a resource."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "Date Valid"@en ;
+    rdfs:range rdfs:Literal ;
+rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/date>, dcterms:date .
+
+
+###############
+#####EDM#######
+###############
+
+edm:Agent a owl:Class ;
+	rdfs:label "Agent"@en ;
+	skos:definition """This class comprises people, either individually or in groups, who have the
+potential to perform intentional actions for which they can be held responsible.""" ;
+	skos:example "Leonardo da Vinci, the British Museum, W3C" ;
+	rdfs:subClassOf :NonInformationResource ;
+	owl:equivalentClass <http://www.cidoc-crm.org/rdfs/cidoc-crm#E39_Actor> ;
+	skos:scopeNote "Rationale: This class is a domain of edm:wasPresentAt" .
+
+edm:EuropeanaAggregation a owl:Class ;
+	rdfs:label "Europeana Aggregation" ;
+	skos:definition """The set of resources related to a single Cultural Heritage Object that
+collectively represent that object in Europeana. Such set consists of: all
+descriptions about the object that Europeana collects from (possibly different) content providers, including thumbnails and other forms of abstractions, as well as of the description of the object Europeana builds.""" ;
+	rdfs:subClassOf :EuropeanaObject , ore:Aggregation ;
+	owl:equivalentClass _:node17eprp1n4x1343336 .
+
+_:node17eprp1n4x1343336 a owl:Restriction ;
+	owl:cardinality "1"^^xsd:nonNegativeInteger ;
+	owl:onProperty :aggregatedCHO .
+
+edm:EuropeanaAggregation skos:note "An instance of EuropeanaAggregation is created at ingestion time for each different Cultural Heritage Object recognized by Europeana. Such instance is associated to the Cultural Heritage Object that it is about, by the property edm:aggregatedCHO"@en ;
+	skos:scopeNote "Obligation and Occurence: The relation between the Cultural Heritage Objects represented in Europeana and the instances of the class EuropeanaAggregation is one-to-one, in the data maintained by Europeana: every Cultural Heritage Object is represented by an instance of EuropeanaAggregation, and every instance of EuropeanaAggregation represent a Cultural Heritage Object."@en ;
+	skos:example "The painting Mona Lisa is a Cultural Heritage Object represented in Europeana by one EuropeanaAggregation instance"@en , "The journal \"Le Temps\" is a Cultural Heritage Object represented in Europeana by one EuropeanaAggregation instance"@en , "The 56th issue of \"Le Temps\" is a (different) Cultural Heritage Object represented in Europeana by another EuropeanaAggregation instance"@en ;
+	skos:scopeNote "Rationale: This class is used in Europeana to gather in a single conceptual unit all the information about a Cultural Heritage Object, necessary for all operations on these objects."@en .
+
+edm:EuropeanaObject a owl:Class ;
+	rdfs:label "Europeana Object"@en ;
+	skos:definition "Any object that is the result of EuropeanaÂ’s activities"@en ;
+	rdfs:subClassOf :WebResource ;
+	skos:example "Any instance of the class EuropeanaAggregation"@en , "An annotation created by a user through the Europeana portal"@en , "Any content created by the users through the service made available by Europeana for that purpose"@en ;
+	skos:scopeNote "Rationale: This class is used to tag objects that are the result of activity of Europeana, and, as such, objects on which Europeana holds rights"@en .
+
+edm:Event a owl:Class ;
+	rdfs:label "Event"@en ;
+	skos:definition """An event is a change \"of states in cultural, social or physical systems,
+ regardless of scale, brought about by a series or group of coherent physical,
+cultural, technological or legal phenomena\" (E5 Event in CIDOC CRM) or a \"set of coherent phenomena or cultural manifestations bounded in time and  space\" (E4 Period in CIDOC CRM)"""@en ;
+	rdfs:subClassOf :NonInformationResource ;
+	owl:equivalentClass <http://www.cidoc-crm.org/rdfs/cidoc-crm#E4_Period> , abc:Temporality , frbr_core:Event , frbroo:F8_Event ;
+	rdfs:subClassOf _:node17eprp1n4x1343337 .
+
+_:node17eprp1n4x1343337 a owl:Restriction ;
+	owl:cardinality "1"^^xsd:nonNegativeInteger ;
+	owl:onProperty :happenedAt .
+
+edm:Event skos:note "Events are identified either by the content provider or by Europeana enrichment at ingestion time"@en ;
+	skos:example "the act of painting Mona Lisa"@en , "the 2nd World War"@en , "the change of custody of Mona Lisa"@en ;
+	skos:scopeNote "Rationale:This class is a domain of edm:happenedAt and the domain of edm:occurredAt"@en .
+
+edm:InformationResource a owl:Class ;
+	rdfs:label "Information Resource"@en ;
+	skos:definition "An information resource is a resource whose essential characteristics can be conveyed in a single message. It can be associated with a URI, it can have a representation, for example: a text is an InformationResource."@en ;
+	owl:equivalentClass <http://www.cidoc-crm.org/rdfs/cidoc-crm#E89_Propositional_Object> , _:node17eprp1n4x1343338 .
+
+_:node17eprp1n4x1343338 a owl:Class ;
+	owl:unionOf _:node17eprp1n4x1343339 .
+
+_:node17eprp1n4x1343339 rdf:first frbr_core:Work ;
+	rdf:rest _:node17eprp1n4x1343340 .
+
+_:node17eprp1n4x1343340 rdf:first frbr_core:Expression ;
+	rdf:rest _:node17eprp1n4x1343341 .
+
+_:node17eprp1n4x1343341 rdf:first frbr_core:Manifestation ;
+	rdf:rest rdf:nil .
+
+:InformationResource owl:equivalentClass _:node17eprp1n4x1343342 .
+
+_:node17eprp1n4x1343342 a owl:Class ;
+	owl:unionOf _:node17eprp1n4x1343343 .
+
+_:node17eprp1n4x1343343 rdf:first frbroo:F1_Work ;
+	rdf:rest _:node17eprp1n4x1343344 .
+
+_:node17eprp1n4x1343344 rdf:first frbroo:F2_Expression ;
+	rdf:rest _:node17eprp1n4x1343345 .
+
+_:node17eprp1n4x1343345 rdf:first frbroo:F3_Manifestation_Product_Type ;
+	rdf:rest _:node17eprp1n4x1343346 .
+
+_:node17eprp1n4x1343346 rdf:first frbroo:F4_Manifestation_Singleton ;
+	rdf:rest rdf:nil .
+
+edm:NonInformationResource a owl:Class ;
+	rdfs:label "Non-Information Resource"@en ;
+	skos:definition "All resources that are not information resources."@en ;
+	owl:complementOf :InformationResource .
+
+edm:PhysicalThing a owl:Class ;
+	rdfs:label "Physical Thing"@en ;
+	skos:definition """A persistent physical item such as a painting, a building, a book or a stone.
+Persons are not items. This class represents Cultural Heritage Objects known to Europeana to be physical things (such as Mona Lisa) as well as all physical things Europeana refers to in the descriptions of Cultural Heritage Objects (such as the Rosetta Stone)."""@en ;
+	rdfs:subClassOf :NonInformationResource ;
+	owl:equivalentClass <http://www.cidoc-crm.org/rdfs/cidoc-crm#E18_Physical_Thing> .
+
+edm:Place a owl:Class ;
+	rdfs:label "Place"@en ;
+	skos:definition "An \"extent in space, in particular on the surface of the earth, in the pure sense of physics: independent from temporal phenomena and matter\" (CIDOC CRM)"@en ;
+	rdfs:subClassOf :NonInformationResource ;
+	owl:equivalentClass DOLCE-Lite:space-region , abc:Place , <http://www.cidoc-crm.org/rdfs/cidoc-crm#E53_Place> , frbr_core:Place , frbroo:F9_Place .
+
+edm:ProvidedCHO a owl:Class ;
+	rdfs:label "Provided CHO"@en ;
+	skos:definition "This class comprises the Cultural Heritage objects that Europeana collects descriptions about."@en ;
+	rdfs:subClassOf _:node17eprp1n4x1343347 .
+
+_:node17eprp1n4x1343347 a owl:Restriction ;
+	owl:cardinality "1"^^xsd:nonNegativeInteger ;
+	owl:onProperty _:node17eprp1n4x1343348 .
+
+_:node17eprp1n4x1343348 a rdf:Property ;
+	owl:inverseOf :aggregatedCHO .
+
+edm:ProvidedCHO skos:note "This class has been mostly motivated by the need to assign a type to the Â“central nodeÂ” in the EDM pattern, during the ingestion process, related to the XML expression of EDM at that stage. It was especially intended to fit the cases where edm:PhysicalThing  cannot be used as the type of the resource standing for the real-world object (independently of any specific data contributor perspective)."@en ;
+	skos:example "Mona Lisa, Winged Victory of Samothrace"@en ;
+	skos:scopeNote "Rationale: This class is the range of edm:aggregatedCHO. A resource of type ProvidedCHO can be the subject of statements using edm:isRelatedTo or any more specific property."@en .
+
+edm:TimeSpan a owl:Class ;
+	rdfs:label "Time Span"@en ;
+	skos:definition """The class of \"abstract temporal extents, in the sense of Galilean physics,
+ having a beginning, an end and a duration\" (CIDOC CRM)"""@en ;
+	rdfs:subClassOf :NonInformationResource , dcterms:PeriodOfTime ;
+	owl:equivalentClass abc:Time , DOLCE-Lite:time-interval , <http://www.cidoc-crm.org/rdfs/cidoc-crm#E52_Time-Span> .
+
+edm:WebResource a owl:Class ;
+	rdfs:label "Web Resource"@en ;
+	skos:definition """Information Resources that have at least one Web Representation and at least
+a URI."""@en ;
+	rdfs:subClassOf :InformationResource .
+
+edm:aggregatedCHO a owl:ObjectProperty ;
+	rdfs:label "Aggregated Cultural Heritage Object"@en ;
+	skos:definition "This property associates an ORE aggregation with the cultural heritage object(s) (CHO for short) it is about."@en ;
+	rdfs:subPropertyOf ore:aggregates , dc:subject , <http://www.cidoc-crm.org/rdfs/cidoc-crm#P129_is_about> ;
+	rdfs:domain ore:Aggregation ;
+	rdfs:range :ProvidedCHO .
+
+edm:begin a owl:DatatypeProperty ;
+	rdfs:label "Begin"@en ;
+	skos:definition "This property denotes the start date of a period of time."@en ;
+	rdfs:subPropertyOf :isRelatedTo ;
+	rdfs:domain _:node17eprp1n4x1343349 .
+
+_:node17eprp1n4x1343349 a owl:Class ;
+	owl:unionOf _:node17eprp1n4x1343350 .
+
+_:node17eprp1n4x1343350 rdf:first :Agent ;
+	rdf:rest _:node17eprp1n4x1343351 .
+
+_:node17eprp1n4x1343351 rdf:first :TimeSpan ;
+	rdf:rest rdf:nil .
+
+edm:collectionName a owl:ObjectProperty ;
+	rdfs:label "Collection Name"@en ;
+	skos:definition "This property holds the collection identifier given to the dataset in Europeana."@en ;
+	skos:note "The value of this property is provided by Europeana as part of the ingestion process."@en .
+
+edm:currentLocation a owl:ObjectProperty ;
+	rdfs:label "Current Location"@en ;
+	skos:definition "The geographic location and/or name of the repository, building, site, or other entity whose boundaries presently include the resource."@en ;
+	rdfs:subPropertyOf dcterms:spatial ;
+	owl:equivalentProperty wgs84_pos:location , <http://www.cidoc-crm.org/rdfs/cidoc-crm#P55_has_current_location> ;
+	rdfs:domain _:node17eprp1n4x1343352 .
+
+_:node17eprp1n4x1343352 a owl:Class ;
+	owl:unionOf _:node17eprp1n4x1343353 .
+
+_:node17eprp1n4x1343353 rdf:first :ProvidedCHO ;
+	rdf:rest _:node17eprp1n4x1343355 .
+
+_:node17eprp1n4x1343355 rdf:first _:node17eprp1n4x1343354 .
+
+_:node17eprp1n4x1343354 a owl:Class ;
+	owl:intersectionOf _:node17eprp1n4x1343356 .
+
+_:node17eprp1n4x1343356 rdf:first ore:Proxy ;
+	rdf:rest _:node17eprp1n4x1343358 .
+
+_:node17eprp1n4x1343358 rdf:first _:node17eprp1n4x1343357 .
+
+_:node17eprp1n4x1343357 a owl:Restriction ;
+	owl:onProperty ore:proxyFor ;
+	owl:someValuesFrom :ProvidedCHO .
+
+_:node17eprp1n4x1343358 rdf:rest rdf:nil .
+
+_:node17eprp1n4x1343355 rdf:rest rdf:nil .
+
+edm:currentLocation rdfs:range :Place .
+
+edm:end a owl:DatatypeProperty ;
+	rdfs:label "End"@en ;
+	skos:definition "This property denotes the end date of a period of time."@en ;
+	rdfs:subPropertyOf :isRelatedTo ;
+	rdfs:domain _:node17eprp1n4x1343359 .
+
+_:node17eprp1n4x1343359 a owl:Class ;
+	owl:unionOf _:node17eprp1n4x1343360 .
+
+_:node17eprp1n4x1343360 rdf:first :Agent ;
+	rdf:rest _:node17eprp1n4x1343361 .
+
+_:node17eprp1n4x1343361 rdf:first :TimeSpan ;
+	rdf:rest rdf:nil .
+
+edm:europeanaProxy a owl:ObjectProperty ;
+	rdfs:label "Europeana Proxy"@en ;
+	skos:definition "This property serves only as a flag to indicate that a proxy is a Europeana proxy (as opposed to a provider proxy).  It is for internal use only."@en ;
+	skos:note "By default, any proxy without this flag can be interpreted as having the value false and  is a provider proxy."@en .
+
+edm:happenedAt a owl:ObjectProperty ;
+	rdfs:label "Happened At"@en ;
+	skos:definition """This property associates an event with the place at which the event
+happened."""@en ;
+	rdfs:subPropertyOf dc:relation ;
+	owl:equivalentProperty <http://www.cidoc-crm.org/rdfs/cidoc-crm#P7_took_place_at> ;
+	rdfs:domain :Event ;
+	rdfs:range :Place .
+
+edm:hasMet a rdf:Property ;
+	rdfs:label "Has Met"@en ;
+	skos:definition "edm:hasMet relates a resource with the objects or phenomena that have happened to or have happened together with the resource under consideration. We can abstractly think of history and the present as a series of Â“meetingsÂ” between people and other things in space-time. Therefore we name this relationship as the things the object Â“has metÂ” in the course of its existence. These meetings are events in the proper sense, in which other people and things participate in any role."@en ;
+	rdfs:subPropertyOf dc:relation .
+
+edm:hasType a owl:ObjectProperty ;
+	rdfs:label "Has Type"@en ;
+	skos:definition """This property relates a resource with the concepts it belongs to in a suitable
+type system such as MIME or any thesaurus that captures categories of objects in a given field (e.g., the Â“ObjectsÂ” facet in GettyÂ’s Art and Architecture Thesaurus). It does not capture aboutness."""@en ;
+	rdfs:subPropertyOf :isRelatedTo ;
+	owl:equivalentProperty <http://www.cidoc-crm.org/rdfs/cidoc-crm#P2_has_type> ;
+	rdfs:domain _:node17eprp1n4x1343362 .
+
+_:node17eprp1n4x1343362 a owl:Class ;
+	owl:unionOf _:node17eprp1n4x1343363 .
+
+_:node17eprp1n4x1343363 rdf:first :ProvidedCHO ;
+	rdf:rest _:node17eprp1n4x1343365 .
+
+_:node17eprp1n4x1343365 rdf:first _:node17eprp1n4x1343364 .
+
+_:node17eprp1n4x1343364 a owl:Class ;
+	owl:intersectionOf _:node17eprp1n4x1343366 .
+
+_:node17eprp1n4x1343366 rdf:first ore:Proxy ;
+	rdf:rest _:node17eprp1n4x1343368 .
+
+_:node17eprp1n4x1343368 rdf:first _:node17eprp1n4x1343367 .
+
+_:node17eprp1n4x1343367 a owl:Restriction ;
+	owl:onProperty ore:proxyFor ;
+	owl:someValuesFrom :ProvidedCHO .
+
+_:node17eprp1n4x1343368 rdf:rest rdf:nil .
+
+_:node17eprp1n4x1343365 rdf:rest rdf:nil .
+
+edm:hasType rdfs:range :NonInformationResource .
+
+edm:hasView a owl:ObjectProperty ;
+	rdfs:label "Has View"@en ;
+	skos:definition """This property relates a ORE aggregation about a CHO with a web resource
+providing a view of that CHO. Examples of view are: a thumbnail, a textual
+abstract and a table of contents. The ORE aggregation may be a Europeana
+Aggregation, in which case the view is an object owned by Europeana (i.e., an instance of edm:EuropeanaObject) or an aggregation contributed by a content provider. In order to capture both these cases, the domain of edm:hasView is ore:Aggregation and its range is edm:WebResource"""@en ;
+	rdfs:subPropertyOf ore:aggregates ;
+	rdfs:domain ore:Aggregation ;
+	rdfs:range :WebResource .
+
+edm:incorporates a owl:ObjectProperty ;
+	rdfs:label "Incorporates"@en ;
+	skos:definition """This property captures the use of some resource to add value to another
+resource. Such resources may be nested, such as performing a theater play text, and then recording the performance, or creating an artful edition of a collection of poems or just aggregating various poems in an anthology. There may be no single part that contains ultimately the incorporated object, which may be dispersed in the presentation. Therefore, incorporated resources do in general not form proper parts. Incorporated resources are not part of the same resource, but are taken from other resources, and have an independent history. Therefore edm:incorporates is not a sub-property of dcterm:hasPart."""@en ;
+	rdfs:subPropertyOf :isSimilarTo ;
+	owl:equivalentProperty frbroo:R14_incorporates .
+
+edm:isAnnotationOf a owl:ObjectProperty ;
+	rdfs:label "Is Annotation Of"@en ;
+	skos:definition """This property relates an annotation (a Europeana object) with the resource
+that it annotates."""@en ;
+	rdfs:subPropertyOf dc:subject , <http://www.cidoc-crm.org/rdfs/cidoc-crm#P67_refers_to> ;
+	rdfs:domain :EuropeanaObject ;
+	rdfs:range _:node17eprp1n4x1343369 .
+
+_:node17eprp1n4x1343369 a owl:Class ;
+	owl:unionOf _:node17eprp1n4x1343370 .
+
+_:node17eprp1n4x1343370 rdf:first :ProvidedCHO ;
+	rdf:rest _:node17eprp1n4x1343372 .
+
+_:node17eprp1n4x1343372 rdf:first _:node17eprp1n4x1343371 .
+
+_:node17eprp1n4x1343371 a owl:Class ;
+	owl:intersectionOf _:node17eprp1n4x1343373 .
+
+_:node17eprp1n4x1343373 rdf:first ore:Proxy ;
+	rdf:rest _:node17eprp1n4x1343375 .
+
+_:node17eprp1n4x1343375 rdf:first _:node17eprp1n4x1343374 .
+
+_:node17eprp1n4x1343374 a owl:Restriction ;
+	owl:onProperty ore:proxyFor ;
+	owl:someValuesFrom :ProvidedCHO .
+
+_:node17eprp1n4x1343375 rdf:rest rdf:nil .
+
+_:node17eprp1n4x1343372 rdf:rest rdf:nil .
+
+edm:isDerivativeOf a rdf:Property ;
+	rdfs:label "Is Derivative Of"@en ;
+	skos:definition "This property captures a narrower notion of derivation than edm:isSimilarTo, in the sense that it relates a resource to another one, obtained by reworking, reducing, expanding, parts or the whole contents of the former, and possibly adding some minor parts. Versions have an even narrower meaning, in that it requires common identity between the related resources. Translations, summaries, abstractions etc. do not qualify as versions, but do qualify as derivatives."@en ;
+	rdfs:subPropertyOf :isSimilarTo ;
+	owl:equivalentProperty frbroo:R2_is_derivative_of .
+
+edm:isNextInSequence a owl:ObjectProperty ;
+	rdfs:label "Is Next In Sequence Of"@en ;
+	skos:definition "edm:isNextInSequence relates two resources S and R that are ordered parts of the same resource A, and such that S comes immediately after R in the order created by their being parts of A."@en ;
+	rdfs:subPropertyOf dc:relation .
+
+edm:isRelatedTo a rdf:Property ;
+	rdfs:label "Is Related To"@en ;
+	skos:definition """edm:isRelatedTo is the most general contextual property in EDM. Contextual
+properties have typically to do either with the things that have happened to or together with the object under consideration, or what the object refers to by its shape, form or features in a figural or encoded form. For sake of simplicity, we include in the contextual relationships also the scholarly classification, which may have either to do with the role and cultural connections of the object in the past, or its kind of structure, substance or contents as it can be verified at present."""@en ;
+	rdfs:domain _:node17eprp1n4x1343376 .
+
+_:node17eprp1n4x1343376 a owl:Class ;
+	owl:unionOf _:node17eprp1n4x1343377 .
+
+_:node17eprp1n4x1343377 rdf:first :ProvidedCHO ;
+	rdf:rest _:node17eprp1n4x1343379 .
+
+_:node17eprp1n4x1343379 rdf:first _:node17eprp1n4x1343378 .
+
+_:node17eprp1n4x1343378 a owl:Class ;
+	owl:intersectionOf _:node17eprp1n4x1343380 .
+
+_:node17eprp1n4x1343380 rdf:first ore:Proxy ;
+	rdf:rest _:node17eprp1n4x1343382 .
+
+_:node17eprp1n4x1343382 rdf:first _:node17eprp1n4x1343381 .
+
+_:node17eprp1n4x1343381 a owl:Restriction ;
+	owl:onProperty ore:proxyFor ;
+	owl:someValuesFrom :ProvidedCHO .
+
+_:node17eprp1n4x1343382 rdf:rest rdf:nil .
+
+_:node17eprp1n4x1343379 rdf:rest rdf:nil .
+
+edm:isRepresentationOf a owl:ObjectProperty ;
+	rdfs:label "Is Representation Of"@en ;
+	skos:definition "This property associates an information resource to the resource (if any) that it represents"@en ;
+	rdfs:subPropertyOf dc:subject ;
+	rdfs:domain :InformationResource ;
+	rdfs:subPropertyOf <http://www.cidoc-crm.org/rdfs/cidoc-crm#P138_represents> .
+
+edm:isSimilarTo a rdf:Property ;
+	rdfs:label "Is Similar To"@en ;
+	skos:definition "The most generic derivation property, covering also the case of questionable derivation. Is Similar To asserts that parts of the contents of one resource exhibit common features with respect to ideas, shapes, structures, colors, words, plots, topics with the contents of the related resource. Those common features may be attributed to a common origin or influence (in particular for derivation), but also to more generic cultural or psychological factors."@en ;
+	rdfs:subPropertyOf dc:relation ;
+	owl:equivalentProperty <http://www.cidoc-crm.org/rdfs/cidoc-crm#P130_shows_features_of> .
+
+edm:isSuccessorOf a owl:ObjectProperty ;
+	rdfs:label "Is Successor Of"@en ;
+	skos:definition "This property captures the relation between the continuation of a resource and that resource. This applies to a story, a serial, a journal etc. No content of the successor resource is identical or has a similar form with that of the precursor. The similarity is only in the context, subjects and figures of a plot. Successors typically form part of a common whole Â– such as a trilogy, a journal, etc."@en ;
+	rdfs:subPropertyOf :isSimilarTo .
+
+edm:landingPage a owl:ObjectProperty ;
+	rdfs:label "Landing Page"@en ;
+	skos:definition "This property captures the relation between a Europeana aggregation representing a cultural heritage object and a (reference) Web resource giving access to that object. Europeana provides the value for this property."@en ;
+	rdfs:subPropertyOf ore:aggregates ;
+	rdfs:range :WebResource .
+
+edm:occurredAt a owl:ObjectProperty ;
+	rdfs:label "Occured At"@en ;
+	skos:definition """This property associates an event to the smallest known time span that
+overlaps with the occurrence of that event"""@en ;
+	rdfs:subPropertyOf dc:relation ;
+	owl:equivalentProperty <http://www.cidoc-crm.org/rdfs/cidoc-crm#P4_has_time-span> ;
+	rdfs:domain :Event ;
+	rdfs:range :TimeSpan .
+
+edm:preview a owl:ObjectProperty ;
+	rdfs:label "Preview"@en ;
+	skos:definition "The URL of a thumbnail representing the digital object, generated by Europeana."@en ;
+	rdfs:subPropertyOf :hasView ;
+	rdfs:range :WebResource .
+
+edm:realizes a owl:ObjectProperty ;
+	rdfs:label "Realizes"@en ;
+	skos:definition "This property describes a relation between a physical thing and the information resource that is contained in it, visible at it or otherwise carried by it, if applicable."@en ;
+	rdfs:subPropertyOf :isRelatedTo ;
+	owl:equivalentProperty <http://www.cidoc-crm.org/rdfs/cidoc-crm#P128_carries> ;
+	rdfs:domain :PhysicalThing ;
+	rdfs:range :InformationResource .
+
+edm:wasPresentAt a owl:ObjectProperty ;
+	rdfs:label "Was Present At"@en ;
+	skos:definition "This property associates the people, things or information resources with an event at which they were present"@en ;
+	rdfs:subPropertyOf dc:relation ;
+	owl:equivalentProperty <http://www.cidoc-crm.org/rdfs/cidoc-crm#P12i_was_present_at> ;
+	rdfs:domain _:node17eprp1n4x1343383 .
+
+_:node17eprp1n4x1343383 a owl:Class ;
+	owl:unionOf _:node17eprp1n4x1343384 .
+
+_:node17eprp1n4x1343384 rdf:first :Agent ;
+	rdf:rest _:node17eprp1n4x1343385 .
+
+_:node17eprp1n4x1343385 rdf:first :InformationResource ;
+	rdf:rest _:node17eprp1n4x1343386 .
+
+_:node17eprp1n4x1343386 rdf:first :PhysicalThing ;
+	rdf:rest rdf:nil .
+
+edm:wasPresentAt rdfs:range :Event .
+
+edm:country a rdf:Property ;
+	rdfs:label "Country"@en ;
+	rdfs:subPropertyOf <http://www.cidoc-crm.org/rdfs/cidoc-crm#P12_occurred_in_the_presence_of> .
+
+edm:dataProvider a rdf:Property ;
+	rdfs:label "Data Provider"@en ;
+	skos:definition "The name or identifier of the organisation who contributes data indirectly to an aggregation service (e.g. Europeana)."@en ;
+	rdfs:subPropertyOf dcterms:provenance ;
+	rdfs:domain ore:Aggregation ;
+	rdfs:range :Agent .
+
+edm:isShownAt a owl:ObjectProperty ;
+	rdfs:label "Is Shown At"@en ;
+	skos:definition "An unambiguous URL reference to the digital object on the providerÂ’s web site in its full information context."@en ;
+	rdfs:subPropertyOf :hasView ;
+	rdfs:range :WebResource .
+
+edm:isShownBy a owl:ObjectProperty ;
+	rdfs:label "Is Shown By"@en ;
+	skos:definition "An unambiguous URL reference to the digital object on the providerÂ’s web site in the best available resolution/quality."@en ;
+	rdfs:subPropertyOf :hasView ;
+	rdfs:range :WebResource .
+
+edm:language a rdf:Property ;
+	rdfs:label "Europeana Language"@en ;
+	skos:definition "The value for this element is added by the Data Ingestion Team as part of the ingestion process, based on the language of the data provider."@en .
+
+edm:object a owl:ObjectProperty ;
+	rdfs:label "Object"@en ;
+	skos:definition """The URL of a thumbnail representing the digital object or, if there is no such
+thumbnail, the URL of the digital object in the best resolution available on the
+web site of the data provider from which a thumbnail could be generated. This will often be the same URL as given in edm:isShownBy."""@en ;
+	rdfs:subPropertyOf :hasView ;
+	rdfs:range :WebResource .
+
+edm:provider a rdf:Property ;
+	rdfs:label "Provider"@en ;
+	skos:definition "The name or identifier of the organization who delivers data directly to an aggregation service (e.g. Europeana)"@en ;
+	rdfs:subPropertyOf :hasMet ;
+	rdfs:range :Agent .
+
+edm:rights a owl:ObjectProperty ;
+	rdfs:label "Europeana Rights"@en ;
+	skos:definition """Information about copyright of the digital object as specified by isShownBy
+and isShownAt"""@en .
+
+edm:type a owl:DatatypeProperty ;
+	rdfs:label "Europeana Type"@en ;
+	skos:definition "The Europeana material type of the resource"@en ;
+	rdfs:subPropertyOf dc:type ;
+	rdfs:range _:node17eprp1n4x1343387 .
+
+_:node17eprp1n4x1343387 a rdfs:Datatype ;
+	owl:oneOf _:node17eprp1n4x1343388 .
+
+_:node17eprp1n4x1343388 rdf:first "TEXT" ;
+	rdf:rest _:node17eprp1n4x1343389 .
+
+_:node17eprp1n4x1343389 rdf:first "IMAGE" ;
+	rdf:rest _:node17eprp1n4x1343390 .
+
+_:node17eprp1n4x1343390 rdf:first "SOUND" ;
+	rdf:rest _:node17eprp1n4x1343391 .
+
+_:node17eprp1n4x1343391 rdf:first "VIDEO" ;
+	rdf:rest _:node17eprp1n4x1343392 .
+
+_:node17eprp1n4x1343392 rdf:first "3D" ;
+	rdf:rest rdf:nil .
+
+edm:ugc a owl:DatatypeProperty ;
+	rdfs:label "UGC"@en ;
+	skos:definition "This element is used to identify user generated content (also called user created content).  It should be applied to all digitised or born digital content contributed by the general public and collected by Europeana through a crowdsourcing initiative or project."@en ;
+	rdfs:range _:node17eprp1n4x1343393 .
+
+_:node17eprp1n4x1343393 a rdfs:Datatype ;
+	owl:oneOf _:node17eprp1n4x1343394 .
+
+_:node17eprp1n4x1343394 rdf:first "TRUE" ;
+	rdf:rest rdf:nil .
+
+edm:unstored a rdf:Property ;
+	rdfs:label "Unstored"@en ;
+	skos:definition """This is a container element which includes all relevant information that
+otherwise cannot be mapped to another element in the ESE."""@en .
+
+edm:uri a owl:ObjectProperty ;
+	rdfs:label "Europeana URI"@en ;
+	skos:definition "This is a tag created by a user through the Europeana interface."@en .
+
+edm:userTag a rdf:Property ;
+	rdfs:label "User Tag"@en ;
+	skos:definition "This is a tag created by a user through the Europeana interface."@en ;
+	rdfs:subPropertyOf dc:description .
+
+edm:year a rdf:Property ;
+	rdfs:label "Europeana Year"@en ;
+	skos:definition """A point of time associated with an event in the life of the original analog or
+born digital object."""@en ;
+	rdfs:subPropertyOf dcterms:temporal .
+
+skos:Concept rdfs:subClassOf :NonInformationResource .
+
+<http://www.cidoc-crm.org/rdfs/cidoc-crm#P79_beginning_is_qualified_by> rdfs:subPropertyOf :begin .
+
+<http://www.cidoc-crm.org/rdfs/cidoc-crm#P80_end_is_qualified_by> rdfs:subPropertyOf :end .
+
+dc:contributor rdfs:subPropertyOf :hasMet .
+
+dc:coverage rdfs:subPropertyOf :hasMet .
+
+dc:creator rdfs:subPropertyOf :hasMet .
+
+dc:date rdfs:subPropertyOf :hasMet .
+
+dc:format rdfs:subPropertyOf :hasType .
+
+dcterms:hasFormat rdfs:subPropertyOf _:node17eprp1n4x1343395 .
+
+_:node17eprp1n4x1343395 a rdf:Property ;
+	owl:inverseOf :isDerivativeOf .
+
+dcterms:hasVersion rdfs:subPropertyOf _:node17eprp1n4x1343396 .
+
+_:node17eprp1n4x1343396 a rdf:Property ;
+	owl:inverseOf :isDerivativeOf .
+
+dcterms:isFormatOf rdfs:subPropertyOf :isDerivativeOf .
+
+dcterms:isReplacedBy rdfs:subPropertyOf _:node17eprp1n4x1343397 .
+
+_:node17eprp1n4x1343397 a rdf:Property ;
+	owl:inverseOf :isDerivativeOf .
+
+dcterms:isVersionOf rdfs:subPropertyOf :isDerivativeOf .
+
+dc:language rdfs:subPropertyOf :hasType .
+
+dc:publisher rdfs:subPropertyOf :hasMet .
+
+dc:relation rdfs:subPropertyOf :isRelatedTo .
+
+dcterms:replaces rdfs:subPropertyOf :isDerivativeOf .
+
+dc:source rdfs:subPropertyOf :isDerivativeOf .
+
+dc:subject rdfs:subPropertyOf :isRelatedTo .
+
+dcterms:tableOfContents rdfs:subPropertyOf :hasView .
+
+dc:type rdfs:subPropertyOf :hasType .
+
+skos:Concept a owl:Class .
+
+ore:Aggregation a owl:Class .
+
+ore:Proxy a owl:Class .
+
+###############
+####Classes####
+###############
+
+
+#################
+####3D Models####
+#################
+
+:3DObject a owl:Class .
+
+:3DMeshModelType a owl:ObjectProperty .
+
+:hasNubOfFaces a owl:DatatypeProperty ; rdfs:range xsd:nonNegativeInteger ; rdfs:domain :3DObject .
+:hasNumOfVertices a owl:DatatypeProperty ; rdfs:range xsd:nonNegativeInteger ; rdfs:domain :3DObject .
+:hasSizeOnDiskMB a owl:DatatypeProperty ; rdfs:range xsd:nonNegativeInteger ; rdfs:domain :3DObject .
+
+:MeshAliasOBJ a :3DMeshModelType .
+:MeshBlender a :3DMeshModelType .
+:MeshGLTF1 a :3DMeshModelType .
+:MeshGLTF2 a :3DMeshModelType .
+:MeshGLTFBinary a :3DMeshModelType .
+:MeshCollada a :3DMeshModelType .
+:Mesh3dc a :3DMeshModelType .
+:Meshasc a :3DMeshModelType .
+:Mesh3DS a :3DMeshModelType .
+:Meshac3d a :3DMeshModelType .
+:MeshAlembic a :3DMeshModelType .
+:MeshBiovisionHierarchy a :3DMeshModelType .
+:MeshCarbonGraphics a :3DMeshModelType .
+:MeshDesignWebFormat a :3DMeshModelType .
+:MeshDesignerWorkbench a :3DMeshModelType .
+:MeshX3D a :3DMeshModelType .
+:MeshVRML a :3DMeshModelType .
+
+
+:MeshAliasOBJ a owl:Class ; rdfs:subClassOf :3DModel .
+:MeshBlender a owl:Class ; rdfs:subClassOf :3DModel .
+:MeshGLTF1 a owl:Class ; rdfs:subClassOf :3DModel .
+:MeshGLTF2 a owl:Class ; rdfs:subClassOf :3DModel .
+:MeshGLTFBinary a owl:Class ; rdfs:subClassOf :3DModel .
+:MeshCollada a owl:Class ; rdfs:subClassOf :3DModel .
+:Mesh3dc a owl:Class ; rdfs:subClassOf :3DModel .
+:Meshasc a owl:Class ; rdfs:subClassOf :3DModel .
+:Mesh3DS a owl:Class ; rdfs:subClassOf :3DModel .
+:Meshac3d a owl:Class ; rdfs:subClassOf :3DModel .
+:MeshAlembic a owl:Class ; rdfs:subClassOf :3DModel .
+:MeshBiovisionHierarchy a owl:Class ; rdfs:subClassOf :3DModel .
+:MeshCarbonGraphics a owl:Class ; rdfs:subClassOf :3DModel .
+:MeshDesignWebFormat a owl:Class ; rdfs:subClassOf :3DModel .
+:MeshDesignerWorkbench a owl:Class ; rdfs:subClassOf :3DModel .
+:MeshX3D a owl:Class ; rdfs:subClassOf :3DModel .
+:MeshVRML a owl:Class ; rdfs:subClassOf :3DModel .
